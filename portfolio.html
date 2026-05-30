@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ==========================================
+       NITISH KUMAR PORTFOLIO | PORTFOLIO PAGE
+       ========================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Nitish Kumar — Graphic Designer & VFX Artist</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ---- Portfolio tab content spacing ---- */
+    .tab-content { padding-top: 2rem; }
+
+    /* ---- Thumbnail placeholder colors per category ---- */
+    .thumb-gd  { background: linear-gradient(135deg,#1a0533,#2d0a5c,#0d0e33); }
+    .thumb-ve  { background: linear-gradient(135deg,#001a33,#003366,#00111a); }
+    .thumb-mg  { background: linear-gradient(135deg,#1a0f00,#3d2200,#0a0700); }
+    .thumb-vfx { background: linear-gradient(135deg,#00001a,#000d33,#00070d); }
+    .thumb-an  { background: linear-gradient(135deg,#1a001a,#330033,#0d000d); }
+
+    .port-card-inner {
+      min-height: 220px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    /* ---- Testimonial carousel custom ---- */
+    .testimonial-carousel .carousel-control-prev,
+    .testimonial-carousel .carousel-control-next {
+      width: 8%;
+      color: var(--cyan);
+      opacity: .7;
+    }
+    .testimonial-carousel .carousel-indicators [data-bs-target] {
+      width: 24px; height: 3px;
+      background: var(--cyan);
+      border: none;
+      border-radius: 0;
+    }
+	  .port-thumb{
+    width:100%;
+    height:260px;
+    overflow:hidden;
+    border-radius:20px;
+    background:#000;
+}
+
+.port-thumb video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+    /* star rating */
+    .star-rating { color: #fbbf24; letter-spacing: .05em; }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       NAVBAR
+       ========================================== -->
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand display-font" href="index.html">NK<span style="color:#fff;opacity:.4">.</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================
+       PAGE BANNER
+       ========================================== -->
+  <section class="page-banner">
+    <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.04;pointer-events:none" xmlns="http://www.w3.org/2000/svg">
+      <defs><pattern id="pg2" width="60" height="60" patternUnits="userSpaceOnUse">
+        <circle cx="30" cy="30" r="1" fill="#a855f7"/>
+      </pattern></defs>
+      <rect width="100%" height="100%" fill="url(#pg2)"/>
+    </svg>
+    <div class="container position-relative">
+      <p class="section-subtitle">Creative Gallery</p>
+      <h1 class="page-banner-title">My <span class="text-cyan">Portfolio</span></h1>
+      <div class="page-banner-line"></div>
+      <p style="color:var(--text-muted);max-width:500px;margin:auto;font-size:.9rem;">A collection of selected works spanning design, motion, video, and visual effects.</p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       PORTFOLIO GALLERY WITH TABS
+       ========================================== -->
+  <section class="section-pad">
+    <div class="container">
+
+      <!-- Tab Navigation -->
+      <ul class="nav nav-tabs-custom mb-0 reveal" id="portfolioTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-all" type="button">All</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-gd" type="button">Graphic Design</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-ve" type="button">Video Editing</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-mg" type="button">Motion Graphics</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-vfx" type="button">VFX</button>
+        </li>
+       
+      </ul>
+
+      <!-- Tab Content -->
+      <div class="tab-content" id="portfolioTabContent">
+
+        <!-- ALL -->
+        <div class="tab-pane fade show active" id="tab-all">
+          <div class="row g-4">
+
+            <div class="col-sm-6 col-lg-4 reveal reveal-delay-1">
+              <div class="portfolio-card">
+                <div class="portfolio-card-bg thumb-gd port-card-inner">
+                  <a href="https://youtu.be/6G-wFPB3iZ8?si=s2fsXaIifqwvxyYs"
+   target="_blank">
+
+    <img src="https://img.youtube.com/vi/6G-wFPB3iZ8/hqdefault.jpg"
+         alt="YouTube Video"
+         style="width:100%; height:260px; object-fit:cover; border-radius:20px;">
+
+</a>
+                </div>
+                <div class="portfolio-card-overlay">
+                  <span class="portfolio-card-cat">Graphic Design</span>
+                  <span class="portfolio-card-title">Event Poster — Neon City</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4 reveal reveal-delay-2">
+              <div class="portfolio-card">
+                <div class="portfolio-card-bg thumb-gd port-card-inner"><img src="images/brand.jpeg" alt=""/>
+                </div>
+                <div class="portfolio-card-overlay">
+                  <span class="portfolio-card-cat">Graphic Design</span>
+                  <span class="portfolio-card-title">Brand Logo — Nova Studio</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4 reveal reveal-delay-3">
+              <div class="portfolio-card">
+                <div class="portfolio-card-bg"><a href="https://youtu.be/82pCRyOuoTA?si=hD_9ky8hh2l_25YB"
+   target="_blank">
+
+    <img src="https://img.youtube.com/vi/82pCRyOuoTA/hqdefault.jpg"
+         alt="YouTube Video"
+         style="width:100%; height:260px; object-fit:cover; border-radius:20px;">
+
+</a>
+                </div>
+                <div class="portfolio-card-overlay">
+                  <span class="portfolio-card-cat">Video Editing</span>
+                  <span class="portfolio-card-title">Cinematic Travel Reel</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4 reveal reveal-delay-1">
+              <div class="portfolio-card">
+                <div class="portfolio-card-bg"><a href="https://youtu.be/oanG-37ACE0?si=_vw1-ACKjegxZ1Uy"
+   target="_blank">
+
+    <img src="https://img.youtube.com/vi/oanG-37ACE0/hqdefault.jpg"
+         alt="YouTube Video"
+         style="width:100%; height:260px; object-fit:cover; border-radius:20px;">
+
+</a>
+                </div>
+                <div class="portfolio-card-overlay">
+                  <span class="portfolio-card-cat">Motion Graphics</span>
+                  <span class="portfolio-card-title">Kinetic Typography Intro</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4 reveal reveal-delay-2">
+              <div class="portfolio-card">
+                <div class="portfolio-card-bg"><a href="https://youtu.be/H-usH8bVJnc?si=dAEsgF3YmlydTmYk"
+   target="_blank">
+
+    <img src="https://img.youtube.com/vi/H-usH8bVJnc/hqdefault.jpg"
+         alt="YouTube Video"
+         style="width:100%; height:260px; object-fit:cover; border-radius:20px;">
+
+</a>
+                </div>
+                <div class="portfolio-card-overlay">
+                  <span class="portfolio-card-cat">VFX</span>
+                  <span class="portfolio-card-title">Space Portal Composite</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4 reveal reveal-delay-3">
+              <div class="portfolio-card">
+                <div class="portfolio-card-bg"><img src="images/WhatsApp Image 2026-05-30 at 1.34.56 AM.jpeg" alt=""/>
+                </div>
+                <div class="portfolio-card-overlay">
+                  <span class="portfolio-card-cat">2D Animation</span>
+                  <span class="portfolio-card-title">Character Walk Cycle</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4 reveal reveal-delay-1">
+              <div class="portfolio-card">
+                <div class="portfolio-card-bg"><a href="https://youtu.be/upJaCt4URzE?si=P-g_pEFE-CJcHeNd"
+   target="_blank">
+
+    <img src="https://img.youtube.com/vi/upJaCt4URzE/hqdefault.jpg"
+         alt="YouTube Video"
+         style="width:100%; height:260px; object-fit:cover; border-radius:20px;">
+
+</a>
+                </div>
+                <div class="portfolio-card-overlay">
+                  <span class="portfolio-card-cat">Video Editing</span>
+                  <span class="portfolio-card-title">YouTube Vlog — Cut & Color</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4 reveal reveal-delay-2">
+              <div class="portfolio-card">
+                <div class="portfolio-card-bg"><a href="https://youtu.be/ZsVWqTC0dxM?si=HMsur6J-qajD2smk"
+   target="_blank">
+
+    <img src="https://img.youtube.com/vi/ZsVWqTC0dxM/hqdefault.jpg"
+         alt="YouTube Video"
+         style="width:100%; height:260px; object-fit:cover; border-radius:20px;">
+
+</a>
+                </div>
+                <div class="portfolio-card-overlay">
+                  <span class="portfolio-card-cat">Motion Graphics</span>
+                  <span class="portfolio-card-title">Logo Reveal Animation</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4 reveal reveal-delay-3">
+              <div class="portfolio-card">
+                <div class="portfolio-card-bg"><img src="images/christmas.jpeg" alt=""/>
+                </div>
+                <div class="portfolio-card-overlay">
+                  <span class="portfolio-card-cat">Graphic Design</span>
+                  <span class="portfolio-card-title">Social Media Kit</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div><!-- /tab-all -->
+
+        <!-- GRAPHIC DESIGN -->
+        <div class="tab-pane fade" id="tab-gd">
+          <div class="row g-4">
+            <div class="col-sm-6 col-lg-4 reveal"><div class="portfolio-card"><div class="portfolio-card-bg thumb-gd"><img src="images/brand.jpeg" alt=""/></div><div class="portfolio-card-overlay"><span class="portfolio-card-cat">Graphic Design</span><span class="portfolio-card-title">Event Poster — Neon City</span></div></div></div>
+            <div class="col-sm-6 col-lg-4 reveal reveal-delay-1"><div class="portfolio-card"><div class="portfolio-card-bg"><img src="images/christmas.jpeg" alt=""/></div><div class="portfolio-card-overlay"><span class="portfolio-card-cat">Graphic Design</span><span class="portfolio-card-title">Brand Logo — Nova Studio</span></div></div></div>
+            <div class="col-sm-6 col-lg-4 reveal reveal-delay-2"><div class="portfolio-card"><div class="portfolio-card-bg"><img src="images/WhatsApp Image 2026-05-30 at 1.34.56 AM.jpeg" alt=""/></div><div class="portfolio-card-overlay"><span class="portfolio-card-cat">Graphic Design</span><span class="portfolio-card-title">Social Media Kit</span></div></div></div>
+            <div class="col-sm-6 col-lg-4 reveal reveal-delay-1"><div class="portfolio-card"><div class="portfolio-card-bg"><img src="images/graphic.png" alt=""/></div><div class="portfolio-card-overlay"><span class="portfolio-card-cat">Graphic Design</span><span class="portfolio-card-title">Brand Identity Package</span></div></div></div>
+          </div>
+        </div>
+
+        <!-- VIDEO EDITING -->
+        <div class="tab-pane fade" id="tab-ve">
+          <div class="row g-4">
+            <div class="col-sm-6 col-lg-4 reveal"><div class="portfolio-card"><div class="portfolio-card-bg"><a href="https://youtu.be/upJaCt4URzE?si=P-g_pEFE-CJcHeNd"
+   target="_blank">
+
+    <img src="https://img.youtube.com/vi/upJaCt4URzE/hqdefault.jpg"
+         alt="YouTube Video"
+         style="width:100%; height:260px; object-fit:cover; border-radius:20px;">
+
+</a>                 </div><div class="portfolio-card-overlay"><span class="portfolio-card-cat">Video Editing</span><span class="portfolio-card-title">Cinematic Travel Reel</span></div></div></div>
+            <div class="col-sm-6 col-lg-4 reveal reveal-delay-1"><div class="portfolio-card"><div class="portfolio-card-bg"><a href="https://youtu.be/ZsVWqTC0dxM?si=HMsur6J-qajD2smk"
+   target="_blank">
+
+    <img src="https://img.youtube.com/vi/ZsVWqTC0dxM/hqdefault.jpg"
+         alt="YouTube Video"
+         style="width:100%; height:260px; object-fit:cover; border-radius:20px;">
+
+</a></div><div class="portfolio-card-overlay"><span class="portfolio-card-cat">Video Editing</span><span class="portfolio-card-title">YouTube Vlog — Cut & Color</span></div></div></div>
+            <div class="col-sm-6 col-lg-4 reveal reveal-delay-2"><div class="portfolio-card"><div class="portfolio-card-bg"><a href="https://youtu.be/82pCRyOuoTA?si=hD_9ky8hh2l_25YB"
+   target="_blank">
+
+    <img src="https://img.youtube.com/vi/82pCRyOuoTA/hqdefault.jpg"
+         alt="YouTube Video"
+         style="width:100%; height:260px; object-fit:cover; border-radius:20px;">
+
+</a></div><div class="portfolio-card-overlay"><span class="portfolio-card-cat">Video Editing</span><span class="portfolio-card-title">Short Film — Dark Edit</span></div></div></div>
+          </div>
+        </div>
+
+        <!-- MOTION GRAPHICS -->
+        <div class="tab-pane fade" id="tab-mg">
+          <div class="row g-4">
+            <div class="col-sm-6 col-lg-4 reveal"><div class="portfolio-card">
+              <div class="portfolio-card-bg"> <img src="images/BEFORE AND AFTER.jpeg" alt=""/></div><div class="portfolio-card-overlay"><span class="portfolio-card-cat">Motion Graphics</span><span class="portfolio-card-title">Kinetic Typography Intro</span></div></div></div>
+            <div class="col-sm-6 col-lg-4 reveal reveal-delay-1"><div class="portfolio-card">
+              <div class="portfolio-card-bg"><img src="images/MOTION STLL IMAGE.jpeg" alt=""/></div><div class="portfolio-card-overlay"><span class="portfolio-card-cat">Motion Graphics</span><span class="portfolio-card-title">Logo Reveal Animation</span></div></div></div>
+            <div class="col-sm-6 col-lg-4 reveal reveal-delay-2"><div class="portfolio-card"><div class="portfolio-card-bg"></div> port-card-inner" style="background:linear-gradient(135deg,#1a1000,#332000)"><i class="bi bi-broadcast" style="font-size:3.5rem;color:rgba(255,107,53,.35)"></i></div><div class="portfolio-card-overlay"><span class="portfolio-card-cat">Motion Graphics</span><span class="portfolio-card-title">Brand Motion Package</span></div></div></div>
+          </div>
+        </div>
+
+        <!-- VFX -->
+        <div class="tab-pane fade" id="tab-vfx">
+          <div class="row g-4">
+            <div class="col-sm-6 col-lg-4 reveal"><div class="portfolio-card"><div class="portfolio-card-bg"><video autoplay muted loop playsinline height="100%" width="100%"	>
+    <source src="images/DC - Official Trailer _ Lokesh Kanagaraj _ Sun Pictures _ Anirudh _ Arun Matheswaran _ Wamiqa Gabbi_1.mp4" type="video/mp4">
+</video></div><div class="portfolio-card-overlay"><span class="portfolio-card-cat">VFX</span><span class="portfolio-card-title">Space Portal Composite</span></div></div></div>
+            <div class="col-sm-6 col-lg-4 reveal reveal-delay-1"><div class="portfolio-card"><div class="portfolio-card-bg"><video autoplay muted loop playsinline height="100%" width="100%">
+    <source src="images/trailer.mp4" type="video/mp4">
+</video></div><div class="portfolio-card-overlay"><span class="portfolio-card-cat">VFX</span><span class="portfolio-card-title">Particle Explosion Scene</span></div></div></div>
+            
+
+        <!-- ANIMATION -->
+       
+
+      </div><!-- /tab-content -->
+    </div>
+  </section>
+
+  <div class="glow-divider"></div>
+
+  <!-- ==========================================
+       CLIENT TESTIMONIALS
+       ========================================== -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <p class="section-subtitle">What Clients Say</p>
+        <h2 class="section-title">Client <span>Testimonials</span></h2>
+      </div>
+
+      <!-- Testimonial Carousel -->
+      <div id="testimonialCarousel" class="carousel slide testimonial-carousel reveal" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner">
+          <!-- Testimonial 1 -->
+          <div class="carousel-item active">
+            <div class="row justify-content-center">
+              <div class="col-md-8 col-lg-7">
+                <div class="glass-card testimonial-card text-center">
+                  <div class="star-rating mb-2">★★★★★</div>
+                  <p class="testimonial-text">"Nitish designed our entire brand identity from scratch — logo, poster, and social media kit. The work was phenomenal. He understood the vision perfectly and delivered with exceptional quality and creativity. Highly recommend!"</p>
+                  <div class="testimonial-name">Rahul Sharma</div>
+                  <div class="testimonial-role">YouTube Content Creator</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 2 -->
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-md-8 col-lg-7">
+                <div class="glass-card testimonial-card text-center">
+                  <div class="star-rating mb-2">★★★★★</div>
+                  <p class="testimonial-text">"The video editing Nitish did for my travel vlog was absolutely cinematic. Color grading, transitions, music sync — everything was spot on. He brought my raw footage to life in ways I didn't even imagine. 10/10!"</p>
+                  <div class="testimonial-name">Priya Mehta</div>
+                  <div class="testimonial-role">Travel Vlogger & Influencer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 3 -->
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-md-8 col-lg-7">
+                <div class="glass-card testimonial-card text-center">
+                  <div class="star-rating mb-2">★★★★★</div>
+                  <p class="testimonial-text">"Nitish created an amazing motion graphics intro for our product launch video. The animation was smooth, professional, and perfectly matched our brand tone. His creativity and attention to detail are outstanding. Will definitely work again!"</p>
+                  <div class="testimonial-name">Arjun Patel</div>
+                  <div class="testimonial-role">Product Marketing Manager</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.carousel-inner -->
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <i class="bi bi-chevron-left" style="font-size:1.5rem;color:var(--cyan)"></i>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <i class="bi bi-chevron-right" style="font-size:1.5rem;color:var(--cyan)"></i>
+        </button>
+      </div><!-- /#testimonialCarousel -->
+
+      <!-- Stat row below testimonials -->
+      <div class="row g-3 mt-5 justify-content-center reveal">
+        <div class="col-6 col-md-3">
+          <div class="glass-card p-3 text-center">
+            <div class="stat-number">30+</div>
+            <div class="stat-label">Projects Done</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="glass-card p-3 text-center">
+            <div class="stat-number" style="color:var(--purple)">15+</div>
+            <div class="stat-label">Happy Clients</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="glass-card p-3 text-center">
+            <div class="stat-number" style="color:var(--orange)">5★</div>
+            <div class="stat-label">Avg Rating</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="glass-card p-3 text-center">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-divider"></div>
+
+  <!-- ==========================================
+       CTA SECTION
+       ========================================== -->
+  <section class="cta-section">
+    <div class="container position-relative">
+      <!-- Glowing ring decoration -->
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:400px;height:400px;border-radius:50%;border:1px solid rgba(0,229,255,.06);pointer-events:none;"></div>
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;border:1px solid rgba(168,85,247,.04);pointer-events:none;"></div>
+
+      <p class="section-subtitle">Collaborate</p>
+      <h2 class="section-title mb-3">Let's Create Something<br><span>Amazing Together</span></h2>
+      <p style="color:var(--text-muted);font-size:.9rem;max-width:460px;margin:0 auto 2rem;">
+        Have a project in mind? I'm open to freelance work, collaborations, and creative partnerships. Let's bring your vision to life.
+      </p>
+      <a href="contact.html" class="btn-solid me-3">Start a Project</a>
+      <a href="about.html" class="btn-glow">About Me</a>
+    </div>
+  </section>
+
+  <!-- Mascot -->
+  <div id="mascot" title="Hello! I'm NK's mascot 👋">
+    <svg viewBox="0 0 52 80" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="26" cy="38" rx="11" ry="14" fill="#0d1a33" stroke="#00e5ff" stroke-width="1.2"/>
+      <circle cx="26" cy="20" r="11" fill="#1a2a4a" stroke="#00e5ff" stroke-width="1.2"/>
+      <rect x="18" y="17" width="16" height="7" rx="3.5" fill="#00e5ff" opacity=".85"/>
+      <circle cx="22" cy="20" r="2" fill="#070b14"/>
+      <circle cx="30" cy="20" r="2" fill="#070b14"/>
+      <circle cx="22.7" cy="19.3" r=".6" fill="#00e5ff"/>
+      <circle cx="30.7" cy="19.3" r=".6" fill="#00e5ff"/>
+      <line x1="15" y1="34" x2="8" y2="44" stroke="#00e5ff" stroke-width="2" stroke-linecap="round"/>
+      <line x1="37" y1="34" x2="44" y2="42" stroke="#00e5ff" stroke-width="2" stroke-linecap="round"/>
+      <line x1="22" y1="51" x2="18" y2="65" stroke="#a855f7" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="30" y1="51" x2="34" y2="65" stroke="#a855f7" stroke-width="2.5" stroke-linecap="round"/>
+      <ellipse cx="18" cy="67" rx="5" ry="2.5" fill="#00e5ff"/>
+      <ellipse cx="34" cy="67" rx="5" ry="2.5" fill="#00e5ff"/>
+    </svg>
+  </div>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-4 mb-3 mb-md-0">
+          <div class="footer-brand mb-1">NK.</div>
+          <p class="footer-text">Graphic Designer &amp; VFX Artist<br>Based in India</p>
+        </div>
+        <div class="col-md-4 mb-3 mb-md-0 text-center">
+          <nav class="d-flex justify-content-center gap-3 flex-wrap">
+            <a href="index.html" class="footer-text" style="color:var(--text-muted)">Home</a>
+            <a href="about.html" class="footer-text" style="color:var(--text-muted)">About</a>
+            <a href="portfolio.html" class="footer-text" style="color:var(--text-muted)">Portfolio</a>
+            <a href="contact.html" class="footer-text" style="color:var(--text-muted)">Contact</a>
+          </nav>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <div class="social-links justify-content-md-end">
+            <a href="#" class="social-link" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-link" title="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="social-link" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-link" title="Behance"><i class="bi bi-behance"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <p class="footer-copy">&copy; 2024 Mr. Nitish Kumar. All rights reserved. Designed with passion &amp; creativity.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Scroll reveal
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Re-trigger reveal when tabs switch
+    document.querySelectorAll('[data-bs-toggle="tab"]').forEach(tab => {
+      tab.addEventListener('shown.bs.tab', () => {
+        document.querySelectorAll('.tab-pane.active .reveal').forEach(el => {
+          setTimeout(() => el.classList.add('visible'), 50);
+        });
+      });
+    });
+
+    // Mascot
+    const mascot = document.getElementById('mascot');
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      if (Math.abs(scrolled - lastScroll) > 2) {
+        mascot.classList.add('mascot-run');
+        clearTimeout(window._mTimer);
+        window._mTimer = setTimeout(() => mascot.classList.remove('mascot-run'), 400);
+      }
+      mascot.style.bottom = (60 + Math.sin(scrolled * 0.01) * 8) + 'px';
+      lastScroll = scrolled;
+    });
+
+    // Navbar
+    window.addEventListener('scroll', () => {
+      document.getElementById('mainNav').style.padding = window.scrollY > 60 ? '.5rem 0' : '.9rem 0';
+    });
+  </script>
+</body>
+</html>

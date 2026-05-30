@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ==========================================
+       NITISH KUMAR PORTFOLIO | CONTACT PAGE
+       ========================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Nitish Kumar — Graphic Designer & VFX Artist</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ---- form success message ---- */
+    .form-success {
+      display: none;
+      padding: 1rem 1.25rem;
+      background: rgba(0,229,255,.08);
+      border: 1px solid rgba(0,229,255,.3);
+      border-radius: 8px;
+      color: var(--cyan);
+      font-family: var(--font-heading);
+      font-size: .9rem;
+      margin-top: 1rem;
+    }
+
+    /* ---- Map placeholder ---- */
+    .map-placeholder {
+      height: 200px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--border-glow);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: .5rem;
+      margin-top: 1.5rem;
+      color: var(--text-muted);
+      font-size: .85rem;
+    }
+
+    /* ---- availability badge ---- */
+    .avail-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(0,229,255,.07);
+      border: 1px solid rgba(0,229,255,.2);
+      border-radius: 20px;
+      padding: .35rem 1rem;
+      font-size: .78rem;
+      color: var(--cyan);
+      font-family: var(--font-heading);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .avail-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 6px #22c55e;
+      animation: pulse-dot 1.5s infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100% { transform: scale(1); opacity:1; }
+      50%      { transform: scale(1.4); opacity:.7; }
+    }
+
+    /* send btn loading state */
+    .btn-sending { opacity:.7; pointer-events:none; }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       NAVBAR
+       ========================================== -->
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand display-font" href="index.html">NK<span style="color:#fff;opacity:.4">.</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================
+       PAGE BANNER
+       ========================================== -->
+  <section class="page-banner">
+    <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.035;pointer-events:none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="pg3" width="50" height="50" patternUnits="userSpaceOnUse">
+          <path d="M25 0 L50 25 L25 50 L0 25 Z" fill="none" stroke="#00e5ff" stroke-width=".5"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#pg3)"/>
+    </svg>
+    <div class="container position-relative">
+      <p class="section-subtitle">Get in Touch</p>
+      <h1 class="page-banner-title">Contact <span class="text-cyan">Me</span></h1>
+      <div class="page-banner-line"></div>
+      <p style="color:var(--text-muted);max-width:500px;margin:auto;font-size:.9rem;">Have a project or idea? I'd love to hear from you. Let's create something extraordinary.</p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CONTACT MAIN SECTION
+       ========================================== -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="row g-5">
+
+        <!-- LEFT: Contact Form -->
+        <div class="col-lg-7 reveal">
+          <p class="section-subtitle">Send a Message</p>
+          <h2 class="section-title mb-4">Let's <span>Talk</span></h2>
+
+          <div class="glass-card p-4 p-md-5">
+            <div id="contactForm">
+              <!-- Name & Email Row -->
+              <div class="row g-3 mb-3">
+                <div class="col-sm-6">
+                  <label class="form-label">Your Name</label>
+                  <input type="text" id="fname" class="form-control form-control-dark" placeholder="Enter your name" />
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label">Email Address</label>
+                  <input type="email" id="femail" class="form-control form-control-dark" placeholder="your@email.com" />
+                </div>
+              </div>
+
+              <!-- Subject -->
+              <div class="mb-3">
+                <label class="form-label">Subject</label>
+                <input type="text" id="fsubject" class="form-control form-control-dark" placeholder="Project / Collaboration / Query" />
+              </div>
+
+              <!-- Message -->
+              <div class="mb-4">
+                <label class="form-label">Message</label>
+                <textarea id="fmessage" class="form-control form-control-dark" rows="5" placeholder="Tell me about your project, timeline, and budget..."></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <button id="sendBtn" onclick="handleSend()" class="btn-solid w-100" style="cursor:pointer;border:none;width:100%;display:block;text-align:center;">
+                <i class="bi bi-send me-2"></i>Send Message
+              </button>
+
+              <!-- Success message -->
+              <div class="form-success" id="formSuccess">
+                <i class="bi bi-check-circle me-2"></i>Message sent! I'll get back to you within 24 hours.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Contact Info -->
+        <div class="col-lg-5 reveal reveal-delay-2">
+          <p class="section-subtitle">My Details</p>
+          <h2 class="section-title mb-4">Contact <span>Info</span></h2>
+
+          <!-- Availability badge -->
+          <div class="avail-badge">
+            <span class="avail-dot"></span>
+            Available for Freelance Projects
+          </div>
+
+          <!-- Info Card -->
+          <div class="glass-card p-4 mb-4">
+
+            <div class="contact-info-item">
+              <div class="contact-icon"><i class="bi bi-person-fill"></i></div>
+              <div>
+                <div class="contact-info-label">Full Name</div>
+                <div class="contact-info-value">Mr. Nitish Kumar</div>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon"><i class="bi bi-briefcase-fill"></i></div>
+              <div>
+                <div class="contact-info-label">Profession</div>
+                <div class="contact-info-value">Graphic Designer &amp; Video Editor</div>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon"><i class="bi bi-envelope-fill"></i></div>
+              <div>
+                <div class="contact-info-label">Email Address</div>
+                <div class="contact-info-value" style="font-size:.85rem;">nitishkumarofficial@email.com</div>
+              </div>
+            </div>
+
+            <div class="contact-info-item" style="margin-bottom:0">
+              <div class="contact-icon"><i class="bi bi-geo-alt-fill"></i></div>
+              <div>
+                <div class="contact-info-label">Location</div>
+                <div class="contact-info-value">India 🇮🇳</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Services Quick List -->
+          <div class="glass-card p-4 mb-4">
+            <h6 style="font-family:var(--font-heading);font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem;">Services Available</h6>
+            <div class="d-flex flex-column gap-2">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-check2-circle text-cyan" style="font-size:1rem;"></i>
+                <span style="font-size:.85rem;color:var(--text-muted)">Graphic Design &amp; Branding</span>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-check2-circle text-cyan" style="font-size:1rem;"></i>
+                <span style="font-size:.85rem;color:var(--text-muted)">Video Editing &amp; Color Grading</span>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-check2-circle text-cyan" style="font-size:1rem;"></i>
+                <span style="font-size:.85rem;color:var(--text-muted)">Motion Graphics &amp; Animation</span>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-check2-circle text-cyan" style="font-size:1rem;"></i>
+                <span style="font-size:.85rem;color:var(--text-muted)">VFX &amp; Visual Compositing</span>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-check2-circle text-cyan" style="font-size:1rem;"></i>
+                <span style="font-size:.85rem;color:var(--text-muted)">Social Media Creative Content</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Media Links -->
+          <div class="glass-card p-4">
+            <h6 style="font-family:var(--font-heading);font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);margin-bottom:1rem;">Find Me On</h6>
+            <div class="d-flex flex-column gap-3">
+
+              <a href="#" class="d-flex align-items-center gap-3 text-decoration-none" style="transition:all .25s;" onmouseover="this.style.marginLeft='6px'" onmouseout="this.style.marginLeft='0'">
+                <div style="width:38px;height:38px;border-radius:8px;background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);display:flex;align-items:center;justify-content:center;">
+                  <i class="bi bi-instagram" style="color:#fff;font-size:1rem;"></i>
+                </div>
+                <div>
+                  <div style="font-family:var(--font-heading);font-weight:600;font-size:.85rem;color:var(--text-primary)">Instagram</div>
+                  <div style="font-size:.75rem;color:var(--text-muted)">@nitishkumar_creative</div>
+                </div>
+                <i class="bi bi-arrow-up-right ms-auto text-muted" style="font-size:.8rem;"></i>
+              </a>
+
+              <a href="#" class="d-flex align-items-center gap-3 text-decoration-none" style="transition:all .25s;" onmouseover="this.style.marginLeft='6px'" onmouseout="this.style.marginLeft='0'">
+                <div style="width:38px;height:38px;border-radius:8px;background:#ff0000;display:flex;align-items:center;justify-content:center;">
+                  <i class="bi bi-youtube" style="color:#fff;font-size:1rem;"></i>
+                </div>
+                <div>
+                  <div style="font-family:var(--font-heading);font-weight:600;font-size:.85rem;color:var(--text-primary)">YouTube</div>
+                  <div style="font-size:.75rem;color:var(--text-muted)">NK Creative Studio</div>
+                </div>
+                <i class="bi bi-arrow-up-right ms-auto text-muted" style="font-size:.8rem;"></i>
+              </a>
+
+              <a href="#" class="d-flex align-items-center gap-3 text-decoration-none" style="transition:all .25s;" onmouseover="this.style.marginLeft='6px'" onmouseout="this.style.marginLeft='0'">
+                <div style="width:38px;height:38px;border-radius:8px;background:#0077b5;display:flex;align-items:center;justify-content:center;">
+                  <i class="bi bi-linkedin" style="color:#fff;font-size:1rem;"></i>
+                </div>
+                <div>
+                  <div style="font-family:var(--font-heading);font-weight:600;font-size:.85rem;color:var(--text-primary)">LinkedIn</div>
+                  <div style="font-size:.75rem;color:var(--text-muted)">Mr. Nitish Kumar</div>
+                </div>
+                <i class="bi bi-arrow-up-right ms-auto text-muted" style="font-size:.8rem;"></i>
+              </a>
+
+              <a href="#" class="d-flex align-items-center gap-3 text-decoration-none" style="transition:all .25s;" onmouseover="this.style.marginLeft='6px'" onmouseout="this.style.marginLeft='0'">
+                <div style="width:38px;height:38px;border-radius:8px;background:#1769ff;display:flex;align-items:center;justify-content:center;">
+                  <i class="bi bi-behance" style="color:#fff;font-size:1rem;"></i>
+                </div>
+                <div>
+                  <div style="font-family:var(--font-heading);font-weight:600;font-size:.85rem;color:var(--text-primary)">Behance</div>
+                  <div style="font-size:.75rem;color:var(--text-muted)">nitishkumar.portfolio</div>
+                </div>
+                <i class="bi bi-arrow-up-right ms-auto text-muted" style="font-size:.8rem;"></i>
+              </a>
+
+            </div>
+          </div>
+
+          <!-- Map Placeholder -->
+          <div class="map-placeholder">
+            <i class="bi bi-map" style="font-size:2rem;color:rgba(0,229,255,.3)"></i>
+            <span>Based in India</span>
+            <span style="font-size:.75rem;opacity:.6;">Available for remote &amp; local projects</span>
+          </div>
+        </div>
+
+      </div><!-- /row -->
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FAQ / QUICK ANSWERS
+       ========================================== -->
+  <section class="section-pad-sm">
+    <div class="container">
+      <div class="text-center mb-4 reveal">
+        <p class="section-subtitle">Quick Answers</p>
+        <h2 class="section-title">Frequently <span>Asked</span></h2>
+      </div>
+      <div class="row g-3 justify-content-center reveal reveal-delay-1">
+        <div class="col-md-10 col-lg-8">
+
+          <div class="accordion" id="faqAccordion" style="--bs-accordion-bg:transparent;">
+
+            <div class="glass-card mb-3 overflow-hidden">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1"
+                style="background:transparent;color:var(--text-primary);font-family:var(--font-heading);font-weight:600;font-size:.9rem;border:none;padding:1.1rem 1.25rem;width:100%;text-align:left;">
+                <i class="bi bi-question-circle text-cyan me-2"></i>
+                What type of projects do you take?
+              </button>
+              <div id="faq1" class="collapse" data-bs-parent="#faqAccordion">
+                <div style="padding:.5rem 1.25rem 1.1rem;font-size:.85rem;color:var(--text-muted);">
+                  I work on graphic design, video editing, motion graphics, VFX, and 2D animation projects. This includes YouTube videos, brand identities, social media content, logo design, cinematic edits, and motion reels.
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card mb-3 overflow-hidden">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2"
+                style="background:transparent;color:var(--text-primary);font-family:var(--font-heading);font-weight:600;font-size:.9rem;border:none;padding:1.1rem 1.25rem;width:100%;text-align:left;">
+                <i class="bi bi-question-circle text-cyan me-2"></i>
+                How long does a typical project take?
+              </button>
+              <div id="faq2" class="collapse" data-bs-parent="#faqAccordion">
+                <div style="padding:.5rem 1.25rem 1.1rem;font-size:.85rem;color:var(--text-muted);">
+                  It depends on the scope. A logo design might take 2–4 days. A video edit can take 3–7 days. Motion graphics or full brand packages may take 1–2 weeks. I'll give you a clear timeline before starting.
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card mb-3 overflow-hidden">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3"
+                style="background:transparent;color:var(--text-primary);font-family:var(--font-heading);font-weight:600;font-size:.9rem;border:none;padding:1.1rem 1.25rem;width:100%;text-align:left;">
+                <i class="bi bi-question-circle text-cyan me-2"></i>
+                Do you offer revisions?
+              </button>
+              <div id="faq3" class="collapse" data-bs-parent="#faqAccordion">
+                <div style="padding:.5rem 1.25rem 1.1rem;font-size:.85rem;color:var(--text-muted);">
+                  Yes! Every project includes revision rounds to ensure you're fully satisfied with the final output. Your creative vision is the priority.
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /accordion -->
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mascot -->
+  <div id="mascot" title="Hello! I'm NK's mascot 👋">
+    <svg viewBox="0 0 52 80" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="26" cy="38" rx="11" ry="14" fill="#0d1a33" stroke="#00e5ff" stroke-width="1.2"/>
+      <circle cx="26" cy="20" r="11" fill="#1a2a4a" stroke="#00e5ff" stroke-width="1.2"/>
+      <rect x="18" y="17" width="16" height="7" rx="3.5" fill="#00e5ff" opacity=".85"/>
+      <circle cx="22" cy="20" r="2" fill="#070b14"/>
+      <circle cx="30" cy="20" r="2" fill="#070b14"/>
+      <circle cx="22.7" cy="19.3" r=".6" fill="#00e5ff"/>
+      <circle cx="30.7" cy="19.3" r=".6" fill="#00e5ff"/>
+      <line x1="15" y1="34" x2="8" y2="44" stroke="#00e5ff" stroke-width="2" stroke-linecap="round"/>
+      <line x1="37" y1="34" x2="44" y2="42" stroke="#00e5ff" stroke-width="2" stroke-linecap="round"/>
+      <line x1="22" y1="51" x2="18" y2="65" stroke="#a855f7" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="30" y1="51" x2="34" y2="65" stroke="#a855f7" stroke-width="2.5" stroke-linecap="round"/>
+      <ellipse cx="18" cy="67" rx="5" ry="2.5" fill="#00e5ff"/>
+      <ellipse cx="34" cy="67" rx="5" ry="2.5" fill="#00e5ff"/>
+    </svg>
+  </div>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-4 mb-3 mb-md-0">
+          <div class="footer-brand mb-1">NK.</div>
+          <p class="footer-text">Graphic Designer &amp; VFX Artist<br>Based in India</p>
+        </div>
+        <div class="col-md-4 mb-3 mb-md-0 text-center">
+          <nav class="d-flex justify-content-center gap-3 flex-wrap">
+            <a href="index.html" class="footer-text" style="color:var(--text-muted)">Home</a>
+            <a href="about.html" class="footer-text" style="color:var(--text-muted)">About</a>
+            <a href="portfolio.html" class="footer-text" style="color:var(--text-muted)">Portfolio</a>
+            <a href="contact.html" class="footer-text" style="color:var(--text-muted)">Contact</a>
+          </nav>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <div class="social-links justify-content-md-end">
+            <a href="#" class="social-link" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-link" title="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="social-link" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-link" title="Behance"><i class="bi bi-behance"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <p class="footer-copy">&copy; 2024 Mr. Nitish Kumar. All rights reserved. Designed with passion &amp; creativity.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // ---- FORM HANDLER ----
+    function handleSend() {
+      const name    = document.getElementById('fname').value.trim();
+      const email   = document.getElementById('femail').value.trim();
+      const subject = document.getElementById('fsubject').value.trim();
+      const message = document.getElementById('fmessage').value.trim();
+
+      if (!name || !email || !subject || !message) {
+        // Highlight empty fields
+        [fname, femail, fsubject, fmessage].forEach(id => {
+          const el = document.getElementById(id) || document.getElementById('f'+id.replace('f',''));
+          if (el && !el.value.trim()) el.style.borderColor = 'rgba(255,107,53,.5)';
+        });
+        ['fname','femail','fsubject','fmessage'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el && !el.value.trim()) {
+            el.style.borderColor = 'rgba(255,107,53,.5)';
+            el.addEventListener('input', () => el.style.borderColor = '', {once:true});
+          }
+        });
+        return;
+      }
+
+      // Simulate send
+      const btn = document.getElementById('sendBtn');
+      btn.classList.add('btn-sending');
+      btn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Sending...';
+
+      setTimeout(() => {
+        btn.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+        // Reset fields
+        ['fname','femail','fsubject','fmessage'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.value = '';
+        });
+      }, 1500);
+    }
+
+    // ---- SCROLL REVEAL ----
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // ---- MASCOT ----
+    const mascot = document.getElementById('mascot');
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      if (Math.abs(scrolled - lastScroll) > 2) {
+        mascot.classList.add('mascot-run');
+        clearTimeout(window._mTimer);
+        window._mTimer = setTimeout(() => mascot.classList.remove('mascot-run'), 400);
+      }
+      mascot.style.bottom = (60 + Math.sin(scrolled * 0.01) * 8) + 'px';
+      lastScroll = scrolled;
+    });
+
+    // ---- NAVBAR ----
+    window.addEventListener('scroll', () => {
+      document.getElementById('mainNav').style.padding = window.scrollY > 60 ? '.5rem 0' : '.9rem 0';
+    });
+  </script>
+</body>
+</html>
